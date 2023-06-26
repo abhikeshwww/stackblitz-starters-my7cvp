@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { useSearchParams } from 'react-router-dom';
 import Comment from './Comment';
 
 const commetnsData = [
@@ -53,10 +55,35 @@ const CommentsLis = ({ data }) => {
 };
 
 const CommentsContainer = () => {
+  const [comments, setComments] = useState({});
+  const COMMENTS_API =
+    'https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyC3oHmoZpZ7GWo6V5iZHgOJ6cQRecy4NtY&textFormat=plainText&part=snippet&videoId=';
+
+  const [searchParams] = useSearchParams();
+  useEffect(() => {
+    getComments();
+  }, []);
+
+  const getComments = async () => {
+    const data = await fetch(
+      'https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyC3oHmoZpZ7GWo6V5iZHgOJ6cQRecy4NtY&textFormat=plainText&part=snippet&videoId=' +
+        searchParams.get('v')
+    );
+    const json = await data.json();
+
+    setComments(json.items);
+  };
+
   return (
     <div className="m-5 p-2">
       <h1 className="font-bold">Comments</h1>
-      <CommentsLis data={commetnsData} />
+
+      {comments?.map((comments) => (
+        <Comment comment={comments} />
+      ))}
+
+
+
     </div>
   );
 };
