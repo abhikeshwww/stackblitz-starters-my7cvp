@@ -1,6 +1,7 @@
 import { SupervisedUserCircleRounded } from '@mui/icons-material';
 import React from 'react';
-import image from '../-abstract-user-icon-1.jpg';
+const image =
+  'https://www.google.com/url?sa=i&url=https%3A%2F%2Ffreeicons.io%2Fessential-web-2%2Fuser-ciecle-round-account-person-icon-40275&psig=AOvVaw1PJHbIgN-rIMzZQDwj5Lcp&ust=1687827738423000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCIj3l73e3_8CFQAAAAAdAAAAABAD';
 
 const Comment = ({ data }) => {
   const { name, text, replies } = data;
