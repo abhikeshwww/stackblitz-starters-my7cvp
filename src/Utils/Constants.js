@@ -10,3 +10,6 @@ export const YOUTUBE_API_SUGGESTIONS_API =
 
 export const VIDEO_COMMENT_API =
   'https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=szvt1vD0Uug&key=AIzaSyC3oHmoZpZ7GWo6V5iZHgOJ6cQRecy4NtY';
+
+export const RELTED_VIDEO_URL =
+  'https://youtube.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyC3oHmoZpZ7GWo6V5iZHgOJ6cQRecy4NtY&type=video&relatedToVideoId=';
