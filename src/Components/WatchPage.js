@@ -33,12 +33,9 @@ const WatchPage = () => {
         ></iframe>
         <ChannelDetails />
         <CommentsContainer />
-      </div>
-
-      <div>
-        {' '}
         <VideoCntSidebar />
       </div>
+      <div></div>
     </>
   );
 };

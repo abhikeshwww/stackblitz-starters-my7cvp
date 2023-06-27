@@ -2,7 +2,7 @@ import React from 'react';
 
 const RelatedVideoCard = ({ info }) => {
   const { snippet } = info;
-  const { title, thumbnails, title, channelTitle, publishTime } = snippet;
+  const { title, thumbnails, channelTitle, publishTime } = snippet;
 
   return (
     <div className="shadow-lg p-2 m-2 w-72 ">

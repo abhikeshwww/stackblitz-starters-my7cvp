@@ -13,6 +13,7 @@ const VideoCntSidebar = () => {
   const getRelatedVideos = async () => {
     const data = await fetch(RELTED_VIDEO_URL + searchParams.get('v'));
     const json = await data.json();
+    console.log(json);
     setRelatedVideos(json.items);
 
     return (
